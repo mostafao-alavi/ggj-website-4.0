@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
-import { Heart, Users, MapPin, Briefcase, ChevronRight, UserPlus, FileCheck, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Heart, Users, MapPin, Briefcase, ChevronRight, UserPlus, FileCheck, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { appendRowToSheet, getAccessToken } from '../lib/googleSheets';
 
 interface Role {
   title: string;
@@ -48,6 +49,7 @@ const VOLUNTEER_ROLES: Role[] = [
 
 export default function Volunteers() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -58,13 +60,47 @@ export default function Volunteers() {
     github: ''
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', city: '', role: 'local-organizer', experience: '', github: '' });
-    }, 4000);
+    setIsSubmitting(true);
+
+    try {
+      const spreadsheetId = localStorage.getItem('ggj_spreadsheet_id');
+      const token = await getAccessToken();
+
+      if (spreadsheetId && token) {
+        // Map tech key to Persian readable name
+        const roleMapping: Record<string, string> = {
+          'local-organizer': 'برگزارکننده سایت محلی',
+          'mentor': 'منتور و مربی تخصصی',
+          'media': 'کمیته رسانه و عکاسی',
+        };
+        const roleLabel = roleMapping[formData.role] || formData.role;
+
+        const rowValues = [
+          formData.name,
+          formData.email,
+          formData.phone,
+          formData.city,
+          roleLabel,
+          formData.experience,
+          formData.github,
+          new Date().toLocaleString('fa-IR')
+        ];
+
+        await appendRowToSheet(token, spreadsheetId, 'داوطلبان', rowValues);
+        console.log('Successfully saved volunteer to Google Sheet!');
+      }
+    } catch (err) {
+      console.error('Failed to append volunteer to Google Sheet:', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', email: '', phone: '', city: '', role: 'local-organizer', experience: '', github: '' });
+      }, 5000);
+    }
   };
 
   return (
@@ -278,9 +314,18 @@ export default function Volunteers() {
 
                   <button
                     type="submit"
-                    className="w-full py-3 bg-brand-violet hover:bg-brand-violet/85 text-white font-bold rounded-xl text-xs transition-colors shadow-lg shadow-brand-violet/20"
+                    disabled={isSubmitting}
+                    className="w-full py-3 bg-brand-violet hover:bg-brand-violet/85 disabled:bg-brand-violet/50 text-white font-bold rounded-xl text-xs transition-colors shadow-lg shadow-brand-violet/20 flex items-center justify-center gap-2"
                   >
-                    ارسال فرم تقاضا
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        در حال ارسال...
+                      </>
+                    ) : 'ارسال فرم تقاضا'}
                   </button>
                 </form>
               )}

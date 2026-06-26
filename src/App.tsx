@@ -10,6 +10,7 @@ import JamSites from './pages/JamSites';
 import Games from './pages/Games';
 import AiMentor from './pages/AiMentor';
 import Guide from './pages/Guide';
+import GoogleSheets from './pages/GoogleSheets';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="games" element={<Games />} />
           <Route path="ai-mentor" element={<AiMentor />} />
           <Route path="guide" element={<Guide />} />
+          <Route path="google-sheets" element={<GoogleSheets />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Newspaper, Users, Calendar, Heart, Shield, Menu, X, Info, MapPin, Gamepad2, Brain, BookOpen } from 'lucide-react';
+import { Newspaper, Users, Calendar, Heart, Shield, Menu, X, Info, MapPin, Gamepad2, Brain, BookOpen, FileSpreadsheet } from 'lucide-react';
 import GgjLogo from './GgjLogo';
 
 export default function Layout() {

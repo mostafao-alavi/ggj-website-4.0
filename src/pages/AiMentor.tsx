@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Brain, Sparkles, Send, Gamepad2, Layers, Compass, HelpCircle, AlertCircle, RefreshCw, Layers3, Flame, Clock, Heart, ArrowUpRight } from 'lucide-react';
+import { Brain, Sparkles, Send, Gamepad2, Layers, Compass, HelpCircle, AlertCircle, RefreshCw, Layers3, Flame, Clock, Heart, ArrowUpRight, FileSpreadsheet, CheckCircle2 } from 'lucide-react';
+import { appendRowToSheet, getAccessToken } from '../lib/googleSheets';
 
 interface GddResult {
   title: string;
@@ -30,6 +31,45 @@ export default function AiMentor() {
   const [loadingStep, setLoadingStep] = useState(0);
   const [result, setResult] = useState<GddResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const [isSavingToSheet, setIsSavingToSheet] = useState(false);
+  const [sheetSaveSuccess, setSheetSaveSuccess] = useState<boolean | null>(null);
+
+  const handleSaveToSheet = async () => {
+    if (!result) return;
+    setIsSavingToSheet(true);
+    setSheetSaveSuccess(null);
+    try {
+      const spreadsheetId = localStorage.getItem('ggj_spreadsheet_id');
+      const token = await getAccessToken();
+
+      if (!spreadsheetId || !token) {
+        alert('لطفاً ابتدا از صفحه «اتصال گوگل شیت»، حساب گوگل خود را متصل کرده و جدول بسازید.');
+        setIsSavingToSheet(false);
+        return;
+      }
+
+      const rowValues = [
+        result.title,
+        theme,
+        genre,
+        platform,
+        constraints,
+        result.concept,
+        result.creativeTwist,
+        result.artStyle,
+        new Date().toLocaleString('fa-IR')
+      ];
+
+      await appendRowToSheet(token, spreadsheetId, 'ایده‌های هوش مصنوعی', rowValues);
+      setSheetSaveSuccess(true);
+    } catch (err) {
+      console.error(err);
+      setSheetSaveSuccess(false);
+    } finally {
+      setIsSavingToSheet(false);
+    }
+  };
 
   // Cycling reassuring messages on loading
   useEffect(() => {
@@ -292,12 +332,48 @@ export default function AiMentor() {
                       <span className="text-[11px] text-brand-sky block font-mono" dir="ltr">PROPOSED TITLE FOR GGJ 2027</span>
                     </div>
                     
-                    <button
-                      onClick={() => { setResult(null); setTheme(''); }}
-                      className="text-xs bg-slate-950 border border-slate-800 text-slate-300 hover:text-white px-3 py-2 rounded-xl transition-all flex items-center gap-1.5"
-                    >
-                      <RefreshCw className="w-3.5 h-3.5" /> شروع مجدد
-                    </button>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={handleSaveToSheet}
+                        disabled={isSavingToSheet}
+                        className={`text-xs px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 font-bold ${
+                          sheetSaveSuccess === true
+                            ? 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-400'
+                            : sheetSaveSuccess === false
+                            ? 'bg-rose-950/40 border border-rose-500/30 text-rose-400'
+                            : 'bg-emerald-500 text-slate-950 hover:bg-emerald-400 disabled:opacity-50'
+                        }`}
+                      >
+                        {isSavingToSheet ? (
+                          <>
+                            <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                            در حال ذخیره‌سازی...
+                          </>
+                        ) : sheetSaveSuccess === true ? (
+                          <>
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                            در گوگل شیت ذخیره شد!
+                          </>
+                        ) : sheetSaveSuccess === false ? (
+                          <>
+                            <AlertCircle className="w-3.5 h-3.5 text-rose-400" />
+                            خطا در ذخیره
+                          </>
+                        ) : (
+                          <>
+                            <FileSpreadsheet className="w-3.5 h-3.5" />
+                            ذخیره در گوگل شیت
+                          </>
+                        )}
+                      </button>
+
+                      <button
+                        onClick={() => { setResult(null); setTheme(''); setSheetSaveSuccess(null); }}
+                        className="text-xs bg-slate-950 border border-slate-800 text-slate-300 hover:text-white px-3 py-2 rounded-xl transition-all flex items-center gap-1.5"
+                      >
+                        <RefreshCw className="w-3.5 h-3.5" /> شروع مجدد
+                      </button>
+                    </div>
                   </div>
 
                   {/* Bento grids details */}
