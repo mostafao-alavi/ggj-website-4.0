@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Vazirmatn:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-jost: "Jost", sans-serif;
+  --font-lato: "Lato", sans-serif;
+
+  --color-brand-sky: #41b6e6; /* PANTONE 298 C */
+  --color-brand-violet: #4f42b5; /* PANTONE 7673 C */
+  --color-brand-purple: #4f2683; /* PANTONE 519 C */
+  --color-accent-yellow: #ffd100; /* PANTONE 108 C */
+  --color-accent-lime: #addc24; /* PANTONE 382 C */
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0b071e; /* Deep space theme matching the GGJ purple tones */
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom Sunburst Overlay as defined in GGJ branding guidelines */
+.ggj-sunburst-bg {
+  position: relative;
+  background: radial-gradient(circle, #2d1847 0%, #150926 70%, #0b071e 100%);
+}
+
+.ggj-sunburst-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(79, 38, 131, 0.15) 0deg 10deg,
+    transparent 10deg 20deg
+  );
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  z-index: 1;
+}
+
+/* Modern Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(21, 15, 38, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(65, 182, 230, 0.1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(65, 182, 230, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(79, 66, 181, 0.3);
+  transform: translateY(-2px);
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Global Game Jam Iran",
+  "description": "The official Persian community portal for Global Game Jam (GGJ), connecting local indie game developers, school youth (GGJ Next), volunteers, and sponsors across Iran.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
