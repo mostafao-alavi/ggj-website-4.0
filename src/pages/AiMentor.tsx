@@ -22,6 +22,7 @@ const LOADING_STEPS = [
 ];
 
 export default function AiMentor() {
+  const isUnderConstruction = true;
   const [theme, setTheme] = useState('');
   const [genre, setGenre] = useState('پلتفرمر دو بعدی (2D Platformer)');
   const [platform, setPlatform] = useState('مرورگر وب (WebGL / Itch.io)');
@@ -44,7 +45,7 @@ export default function AiMentor() {
       const token = await getAccessToken();
 
       if (!spreadsheetId || !token) {
-        alert('لطفاً ابتدا از صفحه «اتصال گوگل شیت»، حساب گوگل خود را متصل کرده و جدول بسازید.');
+        console.warn('Google Sheets is not configured.');
         setIsSavingToSheet(false);
         return;
       }
@@ -159,7 +160,45 @@ export default function AiMentor() {
         </div>
 
         {/* Core Generator Layout split in two cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
+        {isUnderConstruction ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-2xl mx-auto bg-[#0e0a26]/75 border border-brand-violet/20 p-8 md:p-12 rounded-3xl text-center relative overflow-hidden backdrop-blur-md space-y-6 shadow-2xl shadow-brand-purple/5"
+          >
+            {/* Ambient glows inside card */}
+            <div className="absolute -top-12 -left-12 w-48 h-48 bg-brand-sky/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-brand-purple/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="mx-auto w-16 h-16 rounded-full bg-brand-purple/20 border border-brand-violet/30 flex items-center justify-center text-accent-yellow animate-pulse">
+              <Sparkles className="w-8 h-8" />
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-2xl md:text-3xl font-black text-white">به زودی فعال خواهد شد!</h2>
+              <div className="inline-block px-3 py-1 bg-brand-sky/10 border border-brand-sky/20 rounded-full text-[10px] md:text-xs font-bold text-brand-sky font-mono uppercase tracking-widest">
+                Under Active Development
+              </div>
+            </div>
+
+            <p className="text-slate-400 text-xs md:text-sm leading-relaxed max-w-md mx-auto">
+              این بخش هیجان‌انگیز به زودی با جدیدترین فناوری‌های مربی‌گری و بازی‌سازی خلاق مبتنی بر مدل‌های هوش مصنوعی فعال خواهد شد تا به شما در بازی‌سازی ۴۸ ساعته ماراتن کمک کند. منتظر به‌روزرسانی‌های بعدی باشید!
+            </p>
+
+            <div className="pt-4 border-t border-brand-violet/10 flex items-center justify-center gap-6">
+              <div className="text-center">
+                <span className="block text-lg font-black text-white">GGJ 2026</span>
+                <span className="text-[10px] text-slate-500 font-bold">بستر ماراتن</span>
+              </div>
+              <div className="h-8 w-[1px] bg-brand-violet/20"></div>
+              <div className="text-center">
+                <span className="block text-lg font-black text-accent-yellow">فناوری خلاق</span>
+                <span className="text-[10px] text-slate-500 font-bold">هوش مصنوعی</span>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
           
           {/* Right side form */}
           <div className="lg:col-span-5 space-y-6">
@@ -465,8 +504,7 @@ export default function AiMentor() {
               )}
             </AnimatePresence>
           </div>
-
-        </div>
+        </div>)}
 
       </div>
     </div>
