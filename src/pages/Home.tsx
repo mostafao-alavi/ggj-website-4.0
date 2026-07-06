@@ -122,7 +122,7 @@ export default function Home() {
     },
     {
       title: 'وبینار تکنولوژی موتورهای بازی جدید',
-      subtitle: 'آماده‌سازی برای بازی ماراتن',
+      subtitle: 'آماده‌سازی برای بازی رویداد',
       desc: 'مجموعه کارگاه‌های آنلاین بومی با حضور بازی‌سازان بین‌المللی جهت یادگیری تکنیک‌های سرورهای آنلاین در ۴۸ ساعت.',
       date: 'آذر ۱۴۰۵',
       tag: 'ورکشاپ فنی',
@@ -152,14 +152,14 @@ export default function Home() {
             </span>
             
             <h1 className="text-4xl xs:text-5xl md:text-8xl font-black text-white tracking-tight leading-tight md:leading-none mb-6">
-              بزرگ‌ترین ماراتن <br className="md:hidden" />
+              بزرگ‌ترین رویداد <br className="md:hidden" />
               <span className="text-transparent bg-clip-text bg-gradient-to-l from-brand-sky via-brand-violet to-brand-purple">
                 بازی‌سازی جهان
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
-              یک تجربه پرانرژی و بی‌نظیر برای تبدیل ایده‌های شما به بازی در ۴۸ ساعت. بدون نیاز به تجربه‌ی قبلی، با تیم تشکیل دهید، یاد بگیرید و اتمسفر جهانی ماراتن را در ایران تجربه کنید.
+              یک تجربه پرانرژی و بی‌نظیر برای تبدیل ایده‌های شما به بازی در ۴۸ ساعت. بدون نیاز به تجربه‌ی قبلی، با تیم تشکیل دهید، یاد بگیرید و اتمسفر جهانی رویداد را در ایران تجربه کنید.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
@@ -228,7 +228,7 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 <div className="bg-slate-900/60 p-4 rounded-xl border border-brand-violet/10">
                   <span className="text-lg font-black text-brand-sky block font-mono">۴۸</span>
-                  <span className="text-[10px] text-slate-400 block font-bold">ساعت ماراتن فشرده</span>
+                  <span className="text-[10px] text-slate-400 block font-bold">ساعت رویداد فشرده</span>
                 </div>
                 <div className="bg-slate-900/60 p-4 rounded-xl border border-brand-violet/10">
                   <span className="text-lg font-black text-accent-yellow block font-mono">۱</span>

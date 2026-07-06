@@ -78,7 +78,7 @@ export default function Layout() {
                 to="/sponsors"
                 className="bg-accent-yellow hover:bg-accent-yellow/90 text-slate-950 text-xs font-black px-5 py-2.5 rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-1.5 shadow-lg shadow-accent-yellow/15"
               >
-                حمایت از ماراتن
+                حمایت از رویداد
               </Link>
             </div>
 
@@ -116,7 +116,7 @@ export default function Layout() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center bg-accent-yellow hover:bg-accent-yellow/90 text-slate-950 text-sm font-black py-3 rounded-xl block transition-all shadow-lg"
               >
-                حمایت از ماراتن (اسپانسرشیپ)
+                حمایت از رویداد (اسپانسرشیپ)
               </Link>
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function Layout() {
               </div>
               
               <p className="text-slate-400 text-sm leading-relaxed max-w-md">
-                توانمندسازی جامعه بازی‌سازان مستقل ایران در بزرگترین ماراتن خلق بازی جهان. با هدف ایجاد خلاقیت، آزمایش ابزارهای نوین، و ترویج کار تیمی و رفاقت‌های همیشگی در بستر جامعه بازی‌سازی.
+                توانمندسازی جامعه بازی‌سازان مستقل ایران در بزرگترین رویداد خلق بازی جهان. با هدف ایجاد خلاقیت، آزمایش ابزارهای نوین، و ترویج کار تیمی و رفاقت‌های همیشگی در بستر جامعه بازی‌سازی.
               </p>
               
               <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-900 text-[11px] text-slate-500 leading-relaxed max-w-md">
@@ -163,7 +163,7 @@ export default function Layout() {
               <ul className="space-y-3.5 text-xs text-slate-400">
                 <li><Link to="/" className="hover:text-brand-sky transition-colors">خانه و مانیفست</Link></li>
                 <li><Link to="/ai-mentor" className="hover:text-brand-sky transition-colors">مربی ایده ساز هوش مصنوعی</Link></li>
-                <li><Link to="/jam-sites" className="hover:text-brand-sky transition-colors">شعبه‌های برگزاری ماراتن</Link></li>
+                <li><Link to="/jam-sites" className="hover:text-brand-sky transition-colors">شعبه‌های برگزاری رویداد</Link></li>
                 <li><Link to="/games" className="hover:text-brand-sky transition-colors">آرشیو بازی‌های ساخته شده</Link></li>
                 <li><Link to="/guide" className="hover:text-brand-sky transition-colors">راهنما و قوانین بقای ۴۸ ساعته</Link></li>
               </ul>

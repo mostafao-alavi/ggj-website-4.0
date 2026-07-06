@@ -53,7 +53,7 @@ export default function PressKit() {
                     <strong className="text-white text-base">۸۰۰+ سایت فیزیکی و مجازی در سراسر دنیا</strong>
                   </div>
                   <div>
-                    <span className="block text-xs text-slate-500 mb-1">بازه زمانی برگزاری ماراتن:</span>
+                    <span className="block text-xs text-slate-500 mb-1">بازه زمانی برگزاری رویداد:</span>
                     <strong className="text-white text-base font-jost">هفته آخر ژانویه هر سال (۴۸ ساعت)</strong>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export default function PressKit() {
                 تاریخچه کوتاه
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                پروژه Global Game Jam® ابتدا در جولای ۲۰۰۸ به عنوان زیرمجموعه‌ای تجربی از انجمن بین‌المللی بازی‌سازان (IGDA) متولد شد و در سال ۲۰۱۲ به نهادی کاملاً مستقل و غیرانتفاعی مبدل گردید. اولین جم در سال ۲۰۰۹ با ۱,۶۰۰ بازی‌ساز برگزار شد. در آخرین دوره‌ها، این ماراتن پذیرای بیش از ۴۰,۰۰۰ شرکت‌کننده خلاق بوده است.
+                پروژه Global Game Jam® ابتدا در جولای ۲۰۰۸ به عنوان زیرمجموعه‌ای تجربی از انجمن بین‌المللی بازی‌سازان (IGDA) متولد شد و در سال ۲۰۱۲ به نهادی کاملاً مستقل و غیرانتفاعی مبدل گردید. اولین جم در سال ۲۰۰۹ با ۱,۶۰۰ بازی‌ساز برگزار شد. در آخرین دوره‌ها، این رویداد پذیرای بیش از ۴۰,۰۰۰ شرکت‌کننده خلاق بوده است.
               </p>
             </section>
 

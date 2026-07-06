@@ -155,7 +155,7 @@ export default function GGJNext() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex gap-2 items-start text-xs text-slate-400">
                   <CheckCircle2 className="w-4 h-4 text-accent-lime shrink-0" />
-                  <span>برگزاری کارگاه‌های آنلاین کوتاه قبل از ماراتن</span>
+                  <span>برگزاری کارگاه‌های آنلاین کوتاه قبل از رویداد</span>
                 </div>
                 <div className="flex gap-2 items-start text-xs text-slate-400">
                   <CheckCircle2 className="w-4 h-4 text-accent-lime shrink-0" />

@@ -202,7 +202,7 @@ export default function JamSites() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-black text-white tracking-tight"
           >
-            شعبه‌های رسمی برگزاری ماراتن
+            شعبه‌های رسمی برگزاری رویداد
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
@@ -374,7 +374,7 @@ export default function JamSites() {
                 <div className="flex justify-between items-center pb-2 border-b border-slate-800">
                   <div className="flex items-center gap-2">
                     <Layers className="w-5 h-5 text-accent-yellow" />
-                    <h3 className="text-xl font-black text-white">ثبت‌نام مستقیم ماراتن بازی‌سازی</h3>
+                    <h3 className="text-xl font-black text-white">ثبت‌نام مستقیم رویداد بازی‌سازی</h3>
                   </div>
                   <button
                     onClick={() => setSelectedSiteForReg(null)}
@@ -468,7 +468,7 @@ export default function JamSites() {
 
                       {/* Specialized Role Select */}
                       <div className="space-y-1.5 text-right">
-                        <label className="text-xs text-slate-400 font-bold block">نقش تخصصی در ماراتن</label>
+                        <label className="text-xs text-slate-400 font-bold block">نقش تخصصی در رویداد</label>
                         <select
                           value={formData.role}
                           onChange={(e) => setFormData({ ...formData, role: e.target.value })}

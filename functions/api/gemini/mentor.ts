@@ -30,7 +30,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       );
     }
 
-    const prompt = `یک طرح ایده منسجم و نوآورانه برای ساخت بازی در ماراتن ۴۸ ساعته گیم جم با مشخصات زیر طراحی کن:
+    const prompt = `یک طرح ایده منسجم و نوآورانه برای ساخت بازی در رویداد ۴۸ ساعته گیم جم با مشخصات زیر طراحی کن:
 - تم / موضوع رویداد: ${theme}
 - سبک بازی: ${genre || "آزاد"}
 - پلتفرم هدف: ${platform || "آزاد"}
@@ -42,7 +42,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const modelName = "gemini-2.5-flash"; // Highly reliable for global deployment
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
-    const systemInstruction = "You are an expert game design mentor for the Global Game Jam (مربی و رهنما بازی‌سازی ماراتن گیم جم). Your goal is to help game jammers brainstorm exceptionally creative, innovative, and scoped game concepts that can be built in 48 hours. Provide answers ONLY in Persian language. Ensure the game concept directly solves the constraint and fits the 48-hour development scope perfectly.";
+    const systemInstruction = "You are an expert game design mentor for the Global Game Jam (مربی و رهنما بازی‌سازی رویداد گیم جم). Your goal is to help game jammers brainstorm exceptionally creative, innovative, and scoped game concepts that can be built in 48 hours. Provide answers ONLY in Persian language. Ensure the game concept directly solves the constraint and fits the 48-hour development scope perfectly.";
 
     const payload = {
       contents: [

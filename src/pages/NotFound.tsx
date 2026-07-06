@@ -71,7 +71,7 @@ export default function NotFound() {
         >
           <div className="flex items-center gap-2 text-brand-sky font-bold text-xs border-b border-brand-violet/10 pb-3">
             <Compass className="w-4 h-4 shrink-0 animate-spin" style={{ animationDuration: '6s' }} />
-            <span>نقاط پیشنهادی برای بازگشت به ماراتن:</span>
+            <span>نقاط پیشنهادی برای بازگشت به رویداد:</span>
           </div>
 
           <div className="grid grid-cols-2 gap-3 text-xs">

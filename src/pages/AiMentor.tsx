@@ -13,7 +13,7 @@ interface GddResult {
 }
 
 const LOADING_STEPS = [
-  'در حال اتصال به مربی هوشمند ماراتن...',
+  'در حال اتصال به مربی هوشمند رویداد...',
   'تحلیل تم انتخابی و محدودیت‌های چالش‌برانگیز...',
   'طراحی مفهوم اصلی بازی (Core Concept)...',
   'تنظیم مکانیک‌های بهینه‌سازی شده برای توسعه ۴۸ ساعته...',
@@ -155,7 +155,7 @@ export default function AiMentor() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-sm md:text-base leading-relaxed"
           >
-            بزرگ‌ترین چالش در شروع ماراتن ۴۸ ساعته، محدود کردن دامنه (Scope) و یافتن یک ایده نوآورانه است. مربی هوشمند ما بر اساس تم رویداد، پلتفرم و محدودیت‌های چالش‌برانگیز انتخابی شما، یک سند طراحی بازی منسجم و سریع‌توسعه تولید می‌کند.
+            بزرگ‌ترین چالش در شروع رویداد ۴۸ ساعته، محدود کردن دامنه (Scope) و یافتن یک ایده نوآورانه است. مربی هوشمند ما بر اساس تم رویداد، پلتفرم و محدودیت‌های چالش‌برانگیز انتخابی شما، یک سند طراحی بازی منسجم و سریع‌توسعه تولید می‌کند.
           </motion.p>
         </div>
 
@@ -182,13 +182,13 @@ export default function AiMentor() {
             </div>
 
             <p className="text-slate-400 text-xs md:text-sm leading-relaxed max-w-md mx-auto">
-              این بخش هیجان‌انگیز به زودی با جدیدترین فناوری‌های مربی‌گری و بازی‌سازی خلاق مبتنی بر مدل‌های هوش مصنوعی فعال خواهد شد تا به شما در بازی‌سازی ۴۸ ساعته ماراتن کمک کند. منتظر به‌روزرسانی‌های بعدی باشید!
+              این بخش هیجان‌انگیز به زودی با جدیدترین فناوری‌های مربی‌گری و بازی‌سازی خلاق مبتنی بر مدل‌های هوش مصنوعی فعال خواهد شد تا به شما در بازی‌سازی ۴۸ ساعته رویداد کمک کند. منتظر به‌روزرسانی‌های بعدی باشید!
             </p>
 
             <div className="pt-4 border-t border-brand-violet/10 flex items-center justify-center gap-6">
               <div className="text-center">
                 <span className="block text-lg font-black text-white">GGJ 2026</span>
-                <span className="text-[10px] text-slate-500 font-bold">بستر ماراتن</span>
+                <span className="text-[10px] text-slate-500 font-bold">بستر رویداد</span>
               </div>
               <div className="h-8 w-[1px] bg-brand-violet/20"></div>
               <div className="text-center">

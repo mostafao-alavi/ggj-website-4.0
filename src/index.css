@@ -4,8 +4,8 @@
 @theme {
   --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-jost: "Jost", sans-serif;
-  --font-lato: "Lato", sans-serif;
+  --font-jost: "Vazirmatn", sans-serif;
+  --font-lato: "Vazirmatn", sans-serif;
 
   --color-brand-sky: #41b6e6; /* PANTONE 298 C */
   --color-brand-violet: #4f42b5; /* PANTONE 7673 C */
