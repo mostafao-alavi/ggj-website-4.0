@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Newspaper, Users, Calendar, Heart, Shield, Menu, X, Info, MapPin, Gamepad2, Brain, BookOpen, FileSpreadsheet } from 'lucide-react';
 import GgjLogo from './GgjLogo';
@@ -6,6 +6,19 @@ import GgjLogo from './GgjLogo';
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    // Push virtual pageview event to Google Tag Manager dataLayer on every route change
+    if (typeof window !== 'undefined') {
+      const dataLayer = (window as any).dataLayer || [];
+      dataLayer.push({
+        event: 'pageview',
+        page: location.pathname + location.search,
+        title: document.title || 'Global Game Jam Iran'
+      });
+      (window as any).dataLayer = dataLayer;
+    }
+  }, [location]);
 
   const navItems = [
     { label: 'خانه', path: '/' },
