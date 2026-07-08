@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ggj-website-4",
+  "name": "ggj-website-worker",
   "compatibility_date": "2024-11-01",
   "main": "src/worker.ts",
   "assets": {

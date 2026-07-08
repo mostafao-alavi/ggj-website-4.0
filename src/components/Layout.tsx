@@ -10,13 +10,19 @@ export default function Layout() {
   useEffect(() => {
     // Push virtual pageview event to Google Tag Manager dataLayer on every route change
     if (typeof window !== 'undefined') {
-      const dataLayer = (window as any).dataLayer || [];
-      dataLayer.push({
-        event: 'pageview',
-        page: location.pathname + location.search,
-        title: document.title || 'Global Game Jam Iran'
-      });
-      (window as any).dataLayer = dataLayer;
+      const timer = setTimeout(() => {
+        const dataLayer = (window as any).dataLayer || [];
+        dataLayer.push({
+          event: 'pageview',
+          page: location.pathname + location.search,
+          page_path: location.pathname + location.search,
+          title: document.title || 'Global Game Jam Iran',
+          page_title: document.title || 'Global Game Jam Iran'
+        });
+        (window as any).dataLayer = dataLayer;
+      }, 150); // slight delay to allow React Helmet to update document.title asynchronously
+
+      return () => clearTimeout(timer);
     }
   }, [location]);
 
