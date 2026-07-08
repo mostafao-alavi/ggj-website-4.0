@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { Award, Search, Sparkles, PlusCircle, ArrowLeftRight, ArrowRight, ExternalLink, MessageSquare } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 interface Studio {
   id: string;
@@ -88,6 +89,10 @@ export default function Studios() {
 
   return (
     <div className="w-full min-h-screen">
+      <SEO 
+        title="استودیوهای متولد گیم‌جم"
+        description="داستان موفقیت تیم‌هایی که از گلوبال گیم جم شروع کردند و امروز به استودیوهای حرفه‌ای بازی‌سازی تبدیل شده‌اند."
+      />
       {/* Sunburst Branding Background Header */}
       <div className="ggj-sunburst-bg relative pt-20 pb-16 border-b border-brand-violet/20 overflow-hidden">
         <div className="ggj-sunburst-overlay"></div>

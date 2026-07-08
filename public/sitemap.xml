@@ -6,42 +6,47 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://globalgamejam.ir/ai-mentor</loc>
-    <lastmod>2026-07-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://globalgamejam.ir/jam-sites</loc>
     <lastmod>2026-07-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://globalgamejam.ir/games</loc>
     <lastmod>2026-07-06</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://globalgamejam.ir/guide</loc>
-    <lastmod>2026-07-06</lastmod>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://globalgamejam.ir/volunteers</loc>
     <lastmod>2026-07-06</lastmod>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://globalgamejam.ir/ai-mentor</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://globalgamejam.ir/studios</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://globalgamejam.ir/next</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://globalgamejam.ir/press-kit</loc>
     <lastmod>2026-07-06</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://globalgamejam.ir/sponsors</loc>
     <lastmod>2026-07-06</lastmod>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://globalgamejam.ir/ggj-next</loc>
+    <loc>https://globalgamejam.ir/guide</loc>
     <lastmod>2026-07-06</lastmod>
     <priority>0.5</priority>
   </url>

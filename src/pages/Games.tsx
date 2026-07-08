@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, Filter, Gamepad2, Heart, Download, Share2, Layers, Cpu, ExternalLink, Calendar, Users, X, Play, Trophy, CheckCircle } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 interface Game {
   id: string;
@@ -179,6 +180,10 @@ export default function Games() {
 
   return (
     <div className="min-h-screen bg-[#060410] text-slate-100 py-12 px-4 sm:px-6 lg:px-8 font-jost" dir="rtl">
+      <SEO 
+        title="آرشیو بازی‌ها"
+        description="مشاهده و تجربه بازی‌های ساخته شده در گلوبال گیم جم ایران. مجموعه‌ای از نوآوری‌ها و خلاقیت‌های بازی‌سازان مستقل ایرانی."
+      />
       
       {/* Decorative backdrop glow */}
       <div className="absolute top-10 left-10 w-80 h-80 bg-brand-violet/5 rounded-full blur-[100px] pointer-events-none"></div>

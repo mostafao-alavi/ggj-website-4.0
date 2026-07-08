@@ -1,9 +1,14 @@
 import { motion } from 'motion/react';
 import { Download, Building2, Calendar, Mail, Image as ImageIcon, Video, FileText, ChevronLeft, Award, Sparkles } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export default function PressKit() {
   return (
     <div className="w-full">
+      <SEO 
+        title="بسته رسانه‌ای (Press Kit)"
+        description="دسترسی به منابع گرافیکی، لوگوها و اطلاعات رسمی گلوبال گیم جم ایران برای رسانه‌ها و خبرنگاران."
+      />
       {/* Brand Sunburst Background Header */}
       <div className="ggj-sunburst-bg relative pt-20 pb-16 border-b border-brand-violet/20 overflow-hidden">
         <div className="ggj-sunburst-overlay"></div>

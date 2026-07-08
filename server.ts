@@ -122,6 +122,14 @@ async function startServer() {
     }
   });
 
+  // Serve SEO files explicitly
+  app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(process.cwd(), process.env.NODE_ENV === "production" ? 'dist' : 'public', 'robots.txt'));
+  });
+  app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(path.join(process.cwd(), process.env.NODE_ENV === "production" ? 'dist' : 'public', 'sitemap.xml'));
+  });
+
   // Serve static files or setup Vite in dev mode
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

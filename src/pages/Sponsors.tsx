@@ -1,6 +1,7 @@
 import { useState, ReactNode, FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { Shield, Coins, Database, Star, Check, HelpCircle, FileDown, Send, Sparkles } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 interface Tier {
   name: string;
@@ -83,6 +84,10 @@ export default function Sponsors() {
 
   return (
     <div className="w-full min-h-screen">
+      <SEO 
+        title="حامیان و اسپانسرها"
+        description="حمایت از بزرگترین رویداد بازی‌سازی جهان در ایران. فرصتی برای برندها جهت دیده شدن در جامعه متخصصین و نخبگان بازی‌سازی."
+      />
       {/* Brand Sunburst Background Header */}
       <div className="ggj-sunburst-bg relative pt-20 pb-16 border-b border-brand-violet/20 overflow-hidden">
         <div className="ggj-sunburst-overlay"></div>

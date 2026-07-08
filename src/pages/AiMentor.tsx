@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Brain, Sparkles, Send, Gamepad2, Layers, Compass, HelpCircle, AlertCircle, RefreshCw, Layers3, Flame, Clock, Heart, ArrowUpRight, FileSpreadsheet, CheckCircle2 } from 'lucide-react';
 import { appendRowToSheet, getAccessToken } from '../lib/googleSheets';
+import { SEO } from '../components/SEO';
 
 interface GddResult {
   title: string;
@@ -124,6 +125,10 @@ export default function AiMentor() {
 
   return (
     <div className="min-h-screen bg-[#070412] text-slate-100 py-12 px-4 sm:px-6 lg:px-8 font-jost" dir="rtl">
+      <SEO 
+        title="مربی هوشمند بازی‌سازی"
+        description="استفاده از هوش مصنوعی برای ایده پردازی و طراحی سند بازی (GDD) در ۴۸ ساعت. منتور هوشمند گلوبال گیم جم ایران همراه شماست."
+      />
       
       {/* Dynamic Glow Accents */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-brand-sky/5 blur-[120px] pointer-events-none"></div>

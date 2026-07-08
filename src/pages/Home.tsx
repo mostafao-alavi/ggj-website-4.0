@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { Play, Calendar, MapPin, Globe, Sparkles, Send, Mail, Gamepad2, ArrowUpRight, Monitor, Video, GraduationCap, Flame, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -132,6 +133,41 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full">
+      <SEO 
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://globalgamejam.ir/#organization",
+              "name": "Global Game Jam Iran",
+              "url": "https://globalgamejam.ir",
+              "logo": "https://globalgamejam.ir/logo.png",
+              "description": "جامعه بازی‌سازان ایران در بزرگترین رویداد خلق بازی جهان."
+            },
+            {
+              "@type": "Event",
+              "name": "Global Game Jam Iran 2027",
+              "startDate": "2027-01-25",
+              "endDate": "2027-01-31",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+              "location": {
+                "@type": "Place",
+                "name": "Iran (Multiple Locations)",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IR"
+                }
+              },
+              "description": "بزرگترین رویداد بازی‌سازی جهان در ایران. ۴۸ ساعت برای ساخت یک بازی با تم جهانی.",
+              "organizer": {
+                "@id": "https://globalgamejam.ir/#organization"
+              }
+            }
+          ]
+        }}
+      />
       
       {/* Hero Section with Official Sunburst branding and space gradients */}
       <section className="ggj-sunburst-bg relative pt-24 pb-36 overflow-hidden border-b border-brand-violet/20">

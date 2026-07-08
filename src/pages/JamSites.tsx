@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, Filter, MapPin, Users, Phone, Mail, Clock, Send, CheckCircle2, ShieldAlert, Sparkles, X, Layers } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 interface JamSite {
   id: string;
@@ -179,6 +180,10 @@ export default function JamSites() {
 
   return (
     <div className="min-h-screen bg-[#070412] text-slate-100 py-12 px-4 sm:px-6 lg:px-8 font-jost" dir="rtl">
+      <SEO 
+        title="شعبه‌های برگزاری"
+        description="یافتن نزدیک‌ترین شعبه حضوری یا آنلاین برای شرکت در گلوبال گیم جم ایران. لیست هاب‌های تهران، اصفهان، مشهد، شیراز و تبریز."
+      />
       
       {/* Decorative backdrop glow circles */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-brand-sky/5 rounded-full blur-3xl pointer-events-none"></div>

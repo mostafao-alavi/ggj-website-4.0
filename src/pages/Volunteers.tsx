@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { Heart, Users, MapPin, Briefcase, ChevronRight, UserPlus, FileCheck, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { appendRowToSheet, getAccessToken } from '../lib/googleSheets';
+import { SEO } from '../components/SEO';
 
 interface Role {
   title: string;
@@ -105,6 +106,10 @@ export default function Volunteers() {
 
   return (
     <div className="w-full min-h-screen">
+      <SEO 
+        title="فراخوان داوطلبین و کادر اجرایی"
+        description="به تیم اجرایی گلوبال گیم جم ایران بپیوندید. فرصتی برای مشارکت در بزرگترین رویداد بازی‌سازی و شبکه سازی با متخصصین."
+      />
       {/* Brand Sunburst Background Header */}
       <div className="ggj-sunburst-bg relative pt-20 pb-16 border-b border-brand-violet/20 overflow-hidden">
         <div className="ggj-sunburst-overlay"></div>
